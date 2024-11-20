@@ -1,0 +1,86 @@
+.input-container {
+  width: 100%;
+}
+
+.amount-input {
+  width: 70%;
+  margin-right: 16px;
+}
+
+.mat-mdc-form-field.amount-input {
+  .mat-mdc-form-field-flex {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    padding: 0;
+    height: 48px;
+  }
+
+  .mdc-notched-outline {
+    display: none;
+  }
+
+  .mat-mdc-form-field-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  input.mat-mdc-input-element {
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    caret-color: #BB86FC;
+    padding: 0 16px 0 8px;
+  }
+
+  .dollar-prefix {
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 16px;
+  }
+}
+
+.input-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.action-buttons {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+  overflow: hidden;
+  height: 48px;
+  width: 25%;
+  min-width: 160px;
+}
+
+.action-button {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  border-radius: 0;
+  padding: 0;
+  line-height: 46px;
+  background: transparent;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hint-text {
+  width: 100%;
+  font-size: 12px;
+  color: #D9D9D9;
+  letter-spacing: 0.4px;
+  line-height: 16px;
+  margin-top: 4px;
+  padding-left: 16px;
+}

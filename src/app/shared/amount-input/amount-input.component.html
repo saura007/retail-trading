@@ -1,0 +1,13 @@
+<div class="input-container">
+  <mat-form-field appearance="outline" class="amount-input">
+    <mat-label>ENTER DOLLAR AMOUNT</mat-label>
+    <span matPrefix class="dollar-prefix">$ &nbsp;</span>
+    <input matInput [ngModel]="value" (ngModelChange)="onValueChange($event)">
+  </mat-form-field>
+  <div class="action-buttons">
+    <button mat-button class="action-button" (click)="onBuy()">Buy</button>
+    <div class="divider"></div>
+    <button mat-button class="action-button" (click)="onSell()">Sell</button>
+  </div>
+  <div class="hint-text" *ngIf="hint">{{hint}}</div>
+</div>

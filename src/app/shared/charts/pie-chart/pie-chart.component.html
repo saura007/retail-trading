@@ -1,0 +1,23 @@
+<div class="chart-container">
+    <div class="left-allocation">
+        <div class="allocation-text left-text">
+            <div>{{data.assetAllocations[0].assetName}}</div>
+            <div>${{data.assetAllocations[0].allocation | number}}</div>
+            <div>{{calculatePercentage(data.assetAllocations[0].allocation)}}%</div>
+        </div>
+        <div class="allocation-line"></div>
+    </div>
+
+    <div class="donut-chart" [style.width.px]="size" [style.height.px]="size">
+        <div class="inner-circle"></div>
+    </div>
+
+    <div class="right-allocation">
+        <div class="allocation-line right"></div>
+        <div class="allocation-text right-text">
+            <div>{{data.assetAllocations[1].assetName}}</div>
+            <div>${{data.assetAllocations[1].allocation | number}}</div>
+            <div>{{calculatePercentage(data.assetAllocations[1].allocation)}}%</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+.chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.left-allocation,
+.right-allocation {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.allocation-text {
+    width: 90px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: #D9D9D9;
+    text-align: right;
+   
+    &.left-text {
+        text-align: right;
+    }
+
+    &.right-text {
+        text-align: left;
+    }
+
+    >div {
+        margin-bottom: 4px;
+    }
+}
+
+.allocation-line {
+    width: 6px;
+    height: 6px;
+    background: #BB86FC;
+    border-radius: 50%;
+    margin-top: 4px;
+
+    &.right {
+        opacity: 0.6;
+    }
+}
+
+.donut-chart {
+    position: relative;
+    border-radius: 50%;
+    background: conic-gradient(#BB86FC 0% 40%,
+            rgba(187, 134, 252, 0.6) 40% 100%);
+
+    .inner-circle {
+        position: absolute;
+        width: 66.67%;
+        height: 66.67%;
+        background: #100D12;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

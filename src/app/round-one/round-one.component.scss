@@ -1,0 +1,154 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.round-container {
+  background: #100D12;
+  min-height: 100vh;
+  padding: 32px 16px 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.round-header {
+  margin-bottom: 24px; // Changed from 1px to 24px
+  text-align: center; // Added to center the header content
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; // Changed from space-between to center
+    margin-bottom: 16px; // Changed from 1px to 16px
+    position: relative; // Changed from absolute to relative
+
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      margin: 0;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    .help-button {
+      position: absolute;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    
+      .mat-icon {
+        color: #BB86FC;
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+      }
+    
+      &:hover {
+        background: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+
+.portfolio-section {
+  text-align: center;
+  margin-bottom: 24px;
+
+  .label {
+    font-size: 12px;
+    opacity: 0.8;
+    letter-spacing: 0.4px;
+    margin-bottom: 4px;
+  }
+
+  .amount {
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 52px;
+  }
+
+
+
+  .subtitle {
+    font-size: 14px;
+    color: #D9D9D9;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin-top: 8px;
+  }
+}
+
+.chart-section {
+  margin-bottom: 16px;
+}
+
+.action-section {
+  margin-top: 0;
+  width: 100%;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 1); 
+  }
+}
+
+.review-button {
+  width: 100%;
+  height: 48px;
+  margin-top: 32px;
+  background: rgba(231, 224, 232, 0.12);
+  color: rgba(231, 224, 232, 0.38);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+@media screen and (min-height: 700px) {
+  .portfolio-section {
+    margin-bottom: 32px;
+  }
+
+  .chart-section {
+    margin-bottom: 40px;
+  }
+
+  .action-section {
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .portfolio-section {
+    margin-bottom: 16px;
+    
+    .amount {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  }
+
+  .chart-section {
+    transform: scale(0.9);
+    margin: -16px 0;
+  }
+
+  .action-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}

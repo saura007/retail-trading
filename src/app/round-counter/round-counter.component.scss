@@ -1,0 +1,22 @@
+.counter-container {
+    background: #100D12;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .counter-content {
+    text-align: center;
+  }
+
+  .round-text {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .round-number {
+    font-size: 120px;
+    font-weight: 600;
+  }

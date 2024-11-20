@@ -1,0 +1,35 @@
+<div class="round-container">
+    <div class="round-header">
+        <div class="header-content">
+            <!-- <div class="placeholder"></div> -->
+            <h1>Round 1</h1>
+            <button mat-icon-button class="help-button">
+                <mat-icon>help_outline</mat-icon>
+            </button>
+        </div>
+        <app-progress-stepper [currentStep]="1"></app-progress-stepper>
+    </div>
+
+    <div class="portfolio-section">
+        <div class="label">MY PORTFOLIO</div>
+        <div class="amount">${{portfolioData.portfolioValue | number}}</div>
+        <div class="subtitle">This is your initial equity allocation.</div>
+    </div>
+
+    <div class="chart-section">
+        <app-pie-chart [data]="portfolioData"></app-pie-chart>
+    </div>
+
+    <div class="action-section">
+        <h2>What would you like to do with your Tech ETFs?</h2>
+
+        <app-amount-input [(value)]="amount" [hint]="'$300,000 available or enter $0 to hold'" (buy)="onBuy()"
+            (sell)="onSell()">
+        </app-amount-input>
+
+    </div>
+
+    <button mat-flat-button class="review-button" (click)="onReview()">
+        Review
+    </button>
+</div>
