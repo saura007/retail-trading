@@ -1,16 +1,18 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatStepperModule } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-progress-stepper',
   standalone: true,
-  imports: [CommonModule, MatStepperModule],
+  imports: [CommonModule],
   templateUrl: './progress-stepper.component.html',
-  styleUrl: './progress-stepper.component.scss',
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./progress-stepper.component.scss']
 })
 export class ProgressStepperComponent {
   @Input() currentStep: number = 1;
-  @Input() steps: number[] = [1, 2, 3, 4];
+  steps = Array(10).fill(0);
+
+  isActive(index: number): boolean {
+    return index < this.currentStep;
+  }
 }

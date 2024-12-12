@@ -1,0 +1,20 @@
+<div class="swipe-container" 
+     (mousedown)="startDragging($event)"
+     (mousemove)="onDrag($event)"
+     (mouseup)="stopDragging()"
+     (mouseleave)="stopDragging()"
+     (touchstart)="startTouchDragging($event)"
+     (touchmove)="onTouchDrag($event)"
+     (touchend)="stopDragging()">
+  <div class="slider-track" [class.confirmed]="isConfirmed">
+    <span class="slider-text" [class.fade-out]="isConfirmed">
+      {{ isConfirmed ? 'Confirmed!' : 'Slide to confirm' }}
+    </span>
+  </div>
+  <div #sliderThumb 
+       class="slider-thumb" 
+       [class.confirmed]="isConfirmed"
+       [style.left.px]="position">
+    <mat-icon>{{ isConfirmed ? 'check' : 'arrow_forward' }}</mat-icon>
+  </div>
+</div> 

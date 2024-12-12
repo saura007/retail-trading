@@ -1,35 +1,44 @@
 <div class="round-container">
     <div class="round-header">
         <div class="header-content">
-            <!-- <div class="placeholder"></div> -->
             <h1>Round 1</h1>
-            <button mat-icon-button class="help-button">
-                <mat-icon>help_outline</mat-icon>
-            </button>
         </div>
-        <app-progress-stepper [currentStep]="1"></app-progress-stepper>
+        <app-progress-stepper [currentStep]="currentStep"></app-progress-stepper>
     </div>
 
     <div class="portfolio-section">
-        <div class="label">MY PORTFOLIO</div>
+        <div class="label">PORTFOLIO VALUE</div>
         <div class="amount">${{portfolioData.portfolioValue | number}}</div>
-        <div class="subtitle">This is your initial equity allocation.</div>
+        <div class="subtitle">This is your current asset allocation.</div>
     </div>
 
     <div class="chart-section">
         <app-pie-chart [data]="portfolioData"></app-pie-chart>
+        
+        <div class="legend">
+            <div class="legend-item" *ngFor="let item of portfolioData.assetAllocations">
+                <div class="legend-dot" [style.background-color]="item.assetName === 'Tech ETF' ? '#BB86FC' : '#9669CF'"></div>
+                <div class="legend-info">
+                    <div class="legend-name">{{item.assetName}}</div>
+                    <div class="legend-details">
+                        {{item.percentage}}%
+                        <span class="legend-amount">${{item.allocation | number}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="action-section">
-        <h2>What would you like to do with your Tech ETFs?</h2>
-
-        <app-amount-input [(value)]="amount" [hint]="'$300,000 available or enter $0 to hold'" (buy)="onBuy()"
-            (sell)="onSell()">
-        </app-amount-input>
-
-    </div>
-
-    <button mat-flat-button class="review-button" (click)="onReview()">
-        Review
+    <button mat-flat-button class="next-button" (click)="onNext()">
+        Next
     </button>
 </div>
+
+<app-bottom-sheet
+    [isOpen]="isBottomSheetOpen"
+    [(amount)]="amount"
+    (buy)="onBuy()"
+    (sell)="onSell()"
+    (confirm)="onConfirmed()"
+    (close)="onBottomSheetClose()">
+</app-bottom-sheet>

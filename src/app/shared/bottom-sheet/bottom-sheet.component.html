@@ -1,0 +1,39 @@
+<div class="bottom-sheet-overlay" [class.visible]="isOpen" (click)="onClose()">
+  <div class="bottom-sheet" [@slideUpDown] *ngIf="isOpen" (click)="$event.stopPropagation()">
+    <div class="bottom-sheet-header">
+      <div class="drag-handle"></div>
+    </div>
+
+    <div class="bottom-sheet-content" [class.fade-out]="isLoading || isSuccess">
+      <h2>What would you like to do with your Tech ETFs?</h2>
+
+      <app-amount-input 
+        [value]="amount" 
+        (valueChange)="onAmountChange($event)"
+        [hint]="'$300,000 available or enter $0 to hold'" 
+        (buy)="onBuy()"
+        (sell)="onSell()">
+      </app-amount-input>
+    </div>
+
+    <!-- Keep swipe button always visible -->
+    <app-swipe-confirm (confirmed)="onConfirmed()"></app-swipe-confirm>
+
+    <!-- Loading State -->
+    <div class="status-container" *ngIf="isLoading" [@fadeInOut]>
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Success State -->
+    <div class="status-container" *ngIf="isSuccess" [@fadeInOut]>
+      <div class="success-icon">
+        <mat-icon>check_circle</mat-icon>
+      </div>
+      <div class="status-text">Confirmed!</div>
+    </div>
+  </div>
+</div> 
