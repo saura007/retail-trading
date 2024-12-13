@@ -7,7 +7,7 @@
      (touchmove)="onTouchDrag($event)"
      (touchend)="stopDragging()">
   <div class="slider-track" [class.confirmed]="isConfirmed">
-    <span class="slider-text" [class.fade-out]="isConfirmed">
+    <span class="slider-text">
       {{ isConfirmed ? 'Confirmed!' : 'Slide to confirm' }}
     </span>
   </div>
